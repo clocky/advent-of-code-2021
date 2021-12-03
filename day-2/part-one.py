@@ -25,7 +25,7 @@ def main():
 
 def get_commands(filename: str = "input.txt") -> list:
     os.chdir(os.path.dirname(__file__))
-    with open(filename, "r") as file:
+    with open(filename, "r", encoding="utf-8") as file:
         data = [str(item.strip()) for item in file.readlines()]
     return data
 

@@ -12,7 +12,7 @@ def main():
 
 def get_readings(filename: str = "input.txt") -> list:
     os.chdir(os.path.dirname(__file__))
-    with open(filename, "r") as file:
+    with open(filename, "r", encoding="utf-8") as file:
         data = [int(item) for item in file.readlines()]
     return data
 
