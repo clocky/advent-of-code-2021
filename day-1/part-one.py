@@ -1,3 +1,6 @@
+import os
+
+
 def main():
     count = 0
     data = get_readings()
@@ -8,6 +11,7 @@ def main():
 
 
 def get_readings():
+    os.chdir(os.path.dirname(__file__))
     f = open("input.txt", "r")
     data = [int(item) for item in f.readlines()]
     f.close

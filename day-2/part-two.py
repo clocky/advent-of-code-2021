@@ -1,3 +1,6 @@
+import os
+
+
 def main():
     horizontal = 0
     depth = 0
@@ -21,6 +24,7 @@ def main():
 
 
 def get_commands():
+    os.chdir(os.path.dirname(__file__))
     f = open("input.txt", "r")
     data = [str(item.strip()) for item in f.readlines()]
     f.close
