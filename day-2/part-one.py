@@ -4,10 +4,9 @@ import os
 def main():
     horizontal: int = 0
     depth: int = 0
-    data: list = get_commands()
+    commands: list = get_commands()
 
-    for i in range(len(data)):
-        command = data[i]
+    for command in commands:
         direction = command.split(" ")[0]
         distance = int(command.split(" ")[1])
 
