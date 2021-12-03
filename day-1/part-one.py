@@ -2,8 +2,8 @@ import os
 
 
 def main():
-    count = 0
-    data = get_readings()
+    count: int = 0
+    data: list = get_readings()
     for i in range(len(data) - 1):
         if data[i] < data[i + 1]:
             count += 1
