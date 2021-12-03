@@ -21,9 +21,8 @@ def create_windows(data: list) -> list:
 
 def get_readings(filename: str = "input.txt") -> list:
     os.chdir(os.path.dirname(__file__))
-    f = open("input.txt", "r")
-    data = [int(item) for item in f.readlines()]
-    f.close
+    with open(filename, "r") as file:
+        data = [int(item) for item in file.readlines()]
     return data
 
 
