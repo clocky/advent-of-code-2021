@@ -2,10 +2,10 @@ import os
 
 
 def main():
-    horizontal = 0
-    depth = 0
-    aim = 0
-    data = get_commands()
+    horizontal: int = 0
+    depth: int = 0
+    aim: int = 0
+    data: list = get_commands()
 
     for i in range(len(data)):
         command = data[i]
@@ -23,9 +23,9 @@ def main():
     print(horizontal * depth)
 
 
-def get_commands():
+def get_commands(filename: str = "input.txt") -> list:
     os.chdir(os.path.dirname(__file__))
-    f = open("input.txt", "r")
+    f = open(filename, "r")
     data = [str(item.strip()) for item in f.readlines()]
     f.close
     return data

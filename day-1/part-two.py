@@ -2,9 +2,9 @@ import os
 
 
 def main():
-    count = 0
-    data = get_readings()
-    windows = create_windows(data)
+    count: int = 0
+    data: list = get_readings()
+    windows: list = create_windows(data)
 
     for i in range(len(windows) - 1):
         if windows[i] < windows[i + 1]:
@@ -12,14 +12,14 @@ def main():
     print(count)
 
 
-def create_windows(data):
+def create_windows(data: list) -> list:
     windows = []
     for i in range(len(data) - 1):
         windows.append(sum(data[i:i + 3]))
     return windows
 
 
-def get_readings():
+def get_readings(filename: str = "input.txt") -> list:
     os.chdir(os.path.dirname(__file__))
     f = open("input.txt", "r")
     data = [int(item) for item in f.readlines()]

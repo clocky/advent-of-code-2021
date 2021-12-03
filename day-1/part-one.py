@@ -10,9 +10,9 @@ def main():
     print(count)
 
 
-def get_readings():
+def get_readings(filename: str = "input.txt") -> list:
     os.chdir(os.path.dirname(__file__))
-    f = open("input.txt", "r")
+    f = open(filename, "r")
     data = [int(item) for item in f.readlines()]
     f.close
     return data
